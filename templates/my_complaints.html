@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Complaints</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container" style="width: 700px;">
+
+    <h2>My Complaints</h2>
+
+    <table border="1" width="100%">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Status</th>
+        </tr>
+
+        {% for complaint in complaints %}
+        <tr>
+            <td>{{ complaint[0] }}</td>
+            <td>{{ complaint[1] }}</td>
+            <td>{{ complaint[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+
+    <a href="/dashboard">Back to Dashboard</a>
+
+</div>
+
+</body>
+</html>
